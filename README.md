@@ -67,7 +67,7 @@ A full-stack AWS automation portfolio lab that:
 ## Diagram
 
 **Simple Diagram**
-![Lab Architecture](diagram2.png) 
+![Lab Architecture2](diagram2.png) 
 
 **Detailed Diagram**
 ![Lab Architecture](diagram.png) 
