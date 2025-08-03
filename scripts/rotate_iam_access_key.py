@@ -38,6 +38,7 @@ def rotate_access_key(username):
 
 if __name__ == "__main__":
     # Set this to your IAM username (not email, just the user name!)
-    username = "admin-user"
+    username = "automation-lab-user"
     rotate_access_key(username)
+
 
