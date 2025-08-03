@@ -1,4 +1,4 @@
-# AWS Automation Scripts Lab (with Compliance, Slack Alerts, and Key Rotation)
+## AWS Automation Scripts Lab with Compliance, Slack Alerts and Key Rotation
 
 Secure automation of AWS tagging, cleanup, compliance, secret rotation and security scanning—using Python, AWS CLI, open-source tools and GitHub Actions CI/CD.  
 
@@ -66,6 +66,10 @@ A full-stack AWS automation portfolio lab that:
 
 ## Diagram
 
+**Simple Diagram**
+![Lab Architecture](diagram2.png) 
+
+**Detailed Diagram**
 ![Lab Architecture](diagram.png) 
 
 ---
