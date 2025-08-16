@@ -16,11 +16,11 @@ Secure automation of AWS tagging, cleanup, compliance, secret rotation and secur
   - [2. Tagging Automation]
   - [3. Automated Cleanup]
 - [Bonuses](#bonuses)
-  - [1. Security Scanning with Prowler] 
-  - [2. Compliance Check Automation] 
-  - [3. Slack Integration & Notification]
-  - [4. Secret Rotation Automation] 
-  - [5. Automation as Code: GitHub Actions] 
+  - [1.1 Security Scanning with Prowler] 
+  - [1.2 Compliance Check Automation] 
+  - [1.3 Slack Integration & Notification]
+  - [1.4 Secret Rotation Automation] 
+  - [1.5 Automation as Code: GitHub Actions] 
 - [Screenshots](#screenshots)
 - [Lessons Learned](#lessons-learned)
 - [Notes and Limitations](#notes-and-limitations)
@@ -104,22 +104,22 @@ A full-stack AWS automation portfolio lab that:
 
 ## Bonuses
 
-### 1. Security Scanning with Prowler 
+### 1.1 Security Scanning with Prowler 
    - Ran Prowler AWS security scan and saved results *(Screenshots: `prowler_security_scan_running.png` & `prowler_security_scan_results.png`)*
 
-### 2. Compliance Check Automation 
+### 1.2 Compliance Check Automation 
    - Python/boto3 script to detect unencrypted EBS volumes.
    - Integrates with Slack: sends alerts if non-compliance is found *(Screenshots: `compliance-check-script.png`, `compliance-check-terminal-output.png` & `slack-alert-message-channel.png`)*
 
-### 3. Slack Integration & Notification
+### 1.3 Slack Integration & Notification
    - Created Slack app with Incoming Webhook.
    - Automated notifications from scripts (test, compliance, secret rotation) *(Screenshots: `slack-app-name-and-workspace.png`, `slack-enable-incoming-webhooks.png`, `slack-webhook-url-generated.png`, `slack-add-webhook-channel.png`, `slack-channel-message-from-script.png` & `slack-alert-message-channel.png`)*
 
-### 4. Secret Rotation Automation 
+### 1.4 Secret Rotation Automation 
 - Python script rotates IAM user access key, deletes old key and sends Slack alert.
 - Executed via GitHub Actions for auditability *(Screenshots: `secret-rotation-script.png`, `rotate-key-slack-alert.png` & `rotate-key-workflow-success.png`)*
 
-### 5. Automation as Code: GitHub Actions 
+### 1.5 Automation as Code: GitHub Actions 
    - All automation runs as code, scheduled/triggered in `.github/workflows/`.
    - GitHub Actions securely injects AWS/Slack secrets via encrypted secrets *(Screenshots: `github-actions-compliance-workflow-run.png`, `github-actions-compliance-yaml.png` & `rotate-key-workflow-success.png`)*
 
@@ -129,30 +129,30 @@ A full-stack AWS automation portfolio lab that:
 
 *All screenshots are included in the `screenshots/` folder.*
 
-| Step | Filename                                   | Description                                      |
-|------|--------------------------------------------|--------------------------------------------------|
-| 1    | repo_folder_structure.png                  | Folder/project structure in VS Code              |
-| 2    | tagging_script.png                         | Tagging script code in editor                    |
-| 2    | tagging_script_execution.png               | Tagging script output (terminal)                 |
-| 2/3  | ec2s_after_scripts.png                     | EC2s after tagging/cleanup (AWS Console)         |
-| 3    | cleanup_script.png                         | Cleanup script code in editor                    |
-| 3    | cleanup_script_execution.png               | Cleanup script output (terminal)                 |
-| 4    | prowler_security_scan_running.png          | Prowler running in terminal                      |
-| 4    | prowler_security_scan_results.png          | Security findings in Prowler HTML report         |
-| 5    | compliance-check-script.png                | Compliance script code (EBS encryption)          |
-| 5    | compliance-check-terminal-output.png       | Compliance check output (terminal)               |
-| 5    | slack-alert-message-channel.png            | Slack channel message from compliance check      |
-| 6    | slack-app-name-and-workspace.png           | Slack app/workspace selection dialog             |
-| 6    | slack-enable-incoming-webhooks.png         | Slack: Incoming Webhooks enabled                 |
-| 6    | slack-webhook-url-generated.png            | Slack: Webhook URL generated (masked)            |
-| 6    | slack-add-webhook-channel.png              | Slack: Added webhook to channel                  |
-| 6    | slack-channel-message-from-script.png      | Slack alert from script (test message)           |
-| 6    | slack-alert-message-channel.png            | Slack compliance alert received                  |
-| 7    | secret-rotation-script.png                 | IAM key rotation script code                     |
-| 7    | rotate-key-slack-alert.png                 | Slack alert after key rotation                   |
-| 7/8  | rotate-key-workflow-success.png            | GitHub Actions workflow: key rotation success    |
-| 8    | github-actions-compliance-workflow-run.png | Compliance workflow run in Actions               |
-| 8    | github-actions-compliance-yaml.png         | Compliance workflow YAML code in GitHub Actions  |
+| Step   | Filename                                   | Description                                      |
+|--------|--------------------------------------------|--------------------------------------------------|
+| 1      | repo_folder_structure.png                  | Folder/project structure in VS Code              |
+| 2      | tagging_script.png                         | Tagging script code in editor                    |
+| 2      | tagging_script_execution.png               | Tagging script output (terminal)                 |
+| 2/3    | ec2s_after_scripts.png                     | EC2s after tagging/cleanup (AWS Console)         |
+| 3      | cleanup_script.png                         | Cleanup script code in editor                    |
+| 3      | cleanup_script_execution.png               | Cleanup script output (terminal)                 |
+| 1.1    | prowler_security_scan_running.png          | Prowler running in terminal                      |
+| 1.1    | prowler_security_scan_results.png          | Security findings in Prowler HTML report         |
+| 1.2    | compliance-check-script.png                | Compliance script code (EBS encryption)          |
+| 1.2    | compliance-check-terminal-output.png       | Compliance check output (terminal)               |
+| 1.2    | slack-alert-message-channel.png            | Slack channel message from compliance check      |
+| 1.3    | slack-app-name-and-workspace.png           | Slack app/workspace selection dialog             |
+| 1.3    | slack-enable-incoming-webhooks.png         | Slack: Incoming Webhooks enabled                 |
+| 1.3    | slack-webhook-url-generated.png            | Slack: Webhook URL generated (masked)            |
+| 1.3    | slack-add-webhook-channel.png              | Slack: Added webhook to channel                  |
+| 1.3    | slack-channel-message-from-script.png      | Slack alert from script (test message)           |
+| 1.3    | slack-alert-message-channel.png            | Slack compliance alert received                  |
+| 1.4    | secret-rotation-script.png                 | IAM key rotation script code                     |
+| 1.4    | rotate-key-slack-alert.png                 | Slack alert after key rotation                   |
+| 1.4/1.5| rotate-key-workflow-success.png            | GitHub Actions workflow: key rotation success    |
+| 1.5    | github-actions-compliance-workflow-run.png | Compliance workflow run in Actions               |
+| 1.5    | github-actions-compliance-yaml.png         | Compliance workflow YAML code in GitHub Actions  |
 
 ---
 
