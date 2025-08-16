@@ -15,7 +15,7 @@ Secure automation of AWS tagging, cleanup, compliance, secret rotation and secur
   - [1. Project Setup]
   - [2. Tagging Automation]
   - [3. Automated Cleanup]
-- [Bonuses]
+- [Bonuses](#bonuses)
   - [1. Security Scanning with Prowler] 
   - [2. Compliance Check Automation] 
   - [3. Slack Integration & Notification]
