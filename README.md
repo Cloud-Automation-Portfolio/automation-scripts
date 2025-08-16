@@ -15,7 +15,12 @@ Secure automation of AWS tagging, cleanup, compliance, secret rotation and secur
   - [1. Project Setup]
   - [2. Tagging Automation]
   - [3. Automated Cleanup]
-  - [4. Bonuses]
+- [Bonuses]
+  - [1. Security Scanning with Prowler] 
+  - [2. Compliance Check Automation] 
+  - [3. Slack Integration & Notification]
+  - [4. Secret Rotation Automation] 
+  - [5. Automation as Code: GitHub Actions] 
 - [Screenshots](#screenshots)
 - [Lessons Learned](#lessons-learned)
 - [Notes and Limitations](#notes-and-limitations)
@@ -95,23 +100,26 @@ A full-stack AWS automation portfolio lab that:
    - Scripted cleanup of stopped EC2s older than 30 days (dry run for safety)
    - Showed pre/post state in AWS Console *(Screenshots: `cleanup_script.png`, `cleanup_script_execution.png` & `ec2s_after_scripts.png`)*
 
-### 4. Bonuses
-### 4.1 Security Scanning with Prowler 
+---
+
+## Bonuses
+
+### 1. Security Scanning with Prowler 
    - Ran Prowler AWS security scan and saved results *(Screenshots: `prowler_security_scan_running.png` & `prowler_security_scan_results.png`)*
 
-### 4.2. Compliance Check Automation 
+### 2. Compliance Check Automation 
    - Python/boto3 script to detect unencrypted EBS volumes.
    - Integrates with Slack: sends alerts if non-compliance is found *(Screenshots: `compliance-check-script.png`, `compliance-check-terminal-output.png` & `slack-alert-message-channel.png`)*
 
-### 4.3. Slack Integration & Notification
+### 3. Slack Integration & Notification
    - Created Slack app with Incoming Webhook.
    - Automated notifications from scripts (test, compliance, secret rotation) *(Screenshots: `slack-app-name-and-workspace.png`, `slack-enable-incoming-webhooks.png`, `slack-webhook-url-generated.png`, `slack-add-webhook-channel.png`, `slack-channel-message-from-script.png` & `slack-alert-message-channel.png`)*
 
-### 4.4. Secret Rotation Automation 
+### 4. Secret Rotation Automation 
 - Python script rotates IAM user access key, deletes old key and sends Slack alert.
 - Executed via GitHub Actions for auditability *(Screenshots: `secret-rotation-script.png`, `rotate-key-slack-alert.png` & `rotate-key-workflow-success.png`)*
 
-### 4.5. Automation as Code: GitHub Actions 
+### 5. Automation as Code: GitHub Actions 
    - All automation runs as code, scheduled/triggered in `.github/workflows/`.
    - GitHub Actions securely injects AWS/Slack secrets via encrypted secrets *(Screenshots: `github-actions-compliance-workflow-run.png`, `github-actions-compliance-yaml.png` & `rotate-key-workflow-success.png`)*
 
